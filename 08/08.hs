@@ -3,5 +3,5 @@
 compress :: Eq a => [a] -> [a]
 compress [x] = [x]
 compress (x:xs)
-    | not (elem x xs) = x:(compress xs)
+    | x `notElem` xs = x : compress xs
     | otherwise = compress xs
